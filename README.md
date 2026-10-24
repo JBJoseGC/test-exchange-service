@@ -13,11 +13,14 @@ Convierte montos entre monedas usando ExchangeRate-API y guarda cada conversión
 ## Endpoint
 
 `POST http://localhost:8080/api/conversion`
-
+### Request
 ```json
 { "monto": 100, "monedaOrigen": "USD", "monedaDestino": "PEN" }
 ```
-
+### Response
+```json
+{"monto": 100, "montoConvertido": 344.48, "monedaOrigen": "USD", "monedaDestino": "PEN", "tipoCambio": 3.4448 }
+```
 Respuestas: `200` conversión correcta, `400` datos inválidos, `503` servicio externo no disponible.
 
 Consola H2: `http://localhost:8080/h2-console` (JDBC `jdbc:h2:mem:testdb`, usuario `sa`, password `password`).
